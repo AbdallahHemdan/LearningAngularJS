@@ -18,32 +18,38 @@ h3 {
   text-transform: uppercase;
 }
 
-#menu-bar {
+.menu-bar {
   background: crimson;
   color: #fff;
   padding: 10px;
 }
 
-#menu-bar h1 {
+.menu-bar h1 {
   font-size: 24px;
   font-weight: normal;
   display: inline-block;
 }
 
-#menu-bar ul {
+.menu-bar ul {
   float: right;
   list-style-type: none;
   padding: 0;
   margin: 6px 0;
 }
 
-#menu-bar li {
+.menu-bar li {
   float: right;
   margin-left: 20px;
 }
 
-#menu-bar a {
+.menu-bar a {
   color: #fff;
+  text-decoration: none;
+}
+
+.menu-bar a:hover {
+  color: #ccc;
+  text-decoration: underline;
 }
 
 main {
