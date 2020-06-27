@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,5 +7,8 @@
     <script src="app/lib/angular.min.js"></script>
     <title>AngularJS</title>
   </head>
-  <body></body>
+  <body>
+    <input type="text" ng-model="fullName" placeholder="enter your full name" />
+    <p>Your full name is : {{fullName}}</p>
+  </body>
 </html>
