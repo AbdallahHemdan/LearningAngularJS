@@ -73,9 +73,8 @@ main {
   border: 0;
   box-shadow: 4px 4px 2px rgba(20, 20, 20, 0.1);
   font-size: 16px;
-  margin-bottom: 50px;
   width: auto;
-  margin: auto;
+  margin: 0 auto 50px;
 }
 
 .content button:nth-child(2) {

@@ -21,6 +21,12 @@
             ng-repeat="ninja in ninjas | orderBy: order | filter: search  track by $index"
             ng-show="ninja.available"
           >
+            <img
+              ng-src="{{ninja.thumb}}"
+              ng-show="ninja.thumb"
+              alt="ninja"
+              style="width: 50px; float: left; margin: -12px 10px 0 0;"
+            />
             <h3>{{ninja.name}} - {{ninja.rate | currency:"£"}}</h3>
             <div class="remove" ng-click="removeNinja(ninja)">X</div>
             <span class="belt" style="background-color: {{ninja.belt}}"
