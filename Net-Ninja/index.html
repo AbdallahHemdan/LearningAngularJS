@@ -12,25 +12,20 @@
     <header ng-include="'./header.html'"></header>
     <div class="content">
       <div ng-controller="NinjaController">
-        <h2>Hello message</h2>
-        <p>{{message}}</p>
+        <button ng-click="order = 'name'">Order by name</button>
+        <button ng-click="order = 'belt'">Order by belt</button>
         <h2>List of ninjas</h2>
         <input type="text" ng-model="search" />
         <ul>
-          <p>• The name of the ninjas ordered by name</p>
           <li
-            ng-repeat="ninja in ninjas | orderBy: 'name' | filter: search  track by $index"
+            ng-repeat="ninja in ninjas | orderBy: order | filter: search  track by $index"
             ng-show="ninja.available"
           >
-            {{ninja.name}} - {{ninja.rate | currency:"£"}}
-          </li>
-
-          <p>• The name of the ninjas ordered by name in reverse manner</p>
-          <li
-            ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search track by $index"
-            ng-hide="!ninja.available"
-          >
-            {{ninja.name}} - {{ninja.rate | currency}}
+            <h3>{{ninja.name}} - {{ninja.rate | currency:"£"}}</h3>
+            <div class="remove" ng-click="removeNinja(ninja)">X</div>
+            <span class="belt" style="background-color: {{ninja.belt}}"
+              >{{ninja.belt}} belt</span
+            >
           </li>
         </ul>
       </div>

@@ -71,8 +71,9 @@ main {
   cursor: pointer;
   color: #777;
   border: 0;
-  box-shadow: 2px 2px 2px rgba(20, 20, 20, 0.1);
+  box-shadow: 4px 4px 2px rgba(20, 20, 20, 0.1);
   font-size: 16px;
+  margin-bottom: 50px;
 }
 
 .content button:nth-child(2) {
