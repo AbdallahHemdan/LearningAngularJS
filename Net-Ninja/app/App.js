@@ -6,6 +6,17 @@ myNinjaApp.controller("NinjaController", [
     $scope.removeNinja = (ninja) => {
       $scope.ninjas.splice($scope.ninjas.indexOf(ninja), 1);
     };
+
+    $scope.addNewNinja = () => {
+      $scope.ninjas.push({
+        name: $scope.newNinja.name,
+        rate: $scope.newNinja.rate,
+        belt: $scope.newNinja.belt,
+        available: true,
+      });
+      $scope.newNinja = [];
+    };
+
     $scope.message = "Hello, my name is Abdallah Hemdan";
     $scope.ninjas = [
       {
