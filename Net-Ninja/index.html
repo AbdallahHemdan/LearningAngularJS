@@ -10,26 +10,30 @@
   </head>
   <body>
     <header ng-include="'./header.html'"></header>
-    <div class=".container" ng-controller="NinjaController">
-      <h2>Hello message</h2>
-      <p>{{message}}</p>
-      <h2>List of ninjas</h2>
-      <input type="text" ng-model="search" />
-      <ul>
-        <p>• The name of the ninjas ordered by name</p>
-        <li
-          ng-repeat="ninja in ninjas | orderBy: 'name' | filter: search  track by $index"
-        >
-          {{ninja.name}} - {{ninja.rate | currency:"£"}}
-        </li>
+    <div class="content">
+      <div ng-controller="NinjaController">
+        <h2>Hello message</h2>
+        <p>{{message}}</p>
+        <h2>List of ninjas</h2>
+        <input type="text" ng-model="search" />
+        <ul>
+          <p>• The name of the ninjas ordered by name</p>
+          <li
+            ng-repeat="ninja in ninjas | orderBy: 'name' | filter: search  track by $index"
+            ng-show="ninja.available"
+          >
+            {{ninja.name}} - {{ninja.rate | currency:"£"}}
+          </li>
 
-        <p>• The name of the ninjas ordered by name in reverse manner</p>
-        <li
-          ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search track by $index"
-        >
-          {{ninja.name}} - {{ninja.rate | currency}}
-        </li>
-      </ul>
+          <p>• The name of the ninjas ordered by name in reverse manner</p>
+          <li
+            ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search track by $index"
+            ng-hide="!ninja.available"
+          >
+            {{ninja.name}} - {{ninja.rate | currency}}
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
