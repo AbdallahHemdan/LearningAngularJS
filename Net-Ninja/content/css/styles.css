@@ -120,3 +120,8 @@ main {
   cursor: pointer;
   margin-left: 10px;
 }
+
+.title {
+  color: #f00;
+  text-align: center;
+}

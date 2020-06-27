@@ -7,8 +7,13 @@
     <script src="app/lib/angular.min.js"></script>
     <title>AngularJS</title>
   </head>
-  <body>
+  <body ng-init="names=['Abdallah', 'Ahmed', 'Hemdan', 'Ahmed']; color='title'">
     <input type="text" ng-model="fullName" placeholder="enter your full name" />
     <p>Your full name is : {{fullName}}</p>
+    <p>Your name is {{names[0]}}</p>
+    <p>Your father name is {{names[1]}}</p>
+    <p>Your grandfather name is {{names[2]}}</p>
+    <p>Your grandfather father name is {{names[3]}}</p>
+    <h3 class="{{color}}">Hello from title</h3>
   </body>
 </html>
