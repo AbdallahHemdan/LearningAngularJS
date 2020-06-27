@@ -1,5 +1,14 @@
-let myApp = angular.module("myApp", []);
+let myNinjaApp = angular.module("myNinjaApp", []);
 
-myApp.config(() => {});
-myApp.run(() => {});
-myApp.controller;
+myNinjaApp.controller("NinjaController", [
+  "$scope",
+  ($scope) => {
+    $scope.message = "Hello, my name is Abdallah Hemdan";
+    $scope.ninjas = [
+      "Abdallah Hemdan",
+      "Ahmed Mahboub",
+      "Adel Mohamed",
+      "Abdelrahman Elsaied",
+    ];
+  },
+]);

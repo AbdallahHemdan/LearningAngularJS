@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myNinjaApp">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="content/css/styles.css" />
     <script src="app/lib/angular.min.js"></script>
+    <script src="app/App.js"></script>
     <title>AngularJS</title>
   </head>
-  <body
-    ng-init="ninjas=['Abdallah Hemdan', 'Ahmed Mahboub', 'Adel Mohamed', 'Abdelrahman Elsaied']"
-  >
-    <input type="text" ng-model="fullName" placeholder="enter your full name" />
-    <ul>
-      <li ng-repeat="ninja in ninjas track by $index">
-        The name of the ninja stands at {{$index}} is {{ninja}}
-      </li>
-    </ul>
+  <body>
+    <div class=".container" ng-controller="NinjaController">
+      <h2>Hello message</h2>
+      <p>{{message}}</p>
+      <h2>List of ninjas</h2>
+      <ul>
+        <li ng-repeat="ninja in ninjas track by $index">{{ninja}}</li>
+      </ul>
+    </div>
   </body>
 </html>
