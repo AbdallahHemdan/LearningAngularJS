@@ -20,7 +20,8 @@ myNinjaApp.config([
 
 myNinjaApp.controller("NinjaController", [
   "$scope",
-  function ($scope) {
+  "$http",
+  function ($scope, $http) {
     $scope.removeNinja = function (ninja) {
       $scope.ninjas.splice($scope.ninjas.indexOf(ninja), 1);
     };
@@ -34,37 +35,15 @@ myNinjaApp.controller("NinjaController", [
       });
       $scope.newNinja = [];
     };
-
     $scope.message = "Hello, my name is Abdallah Hemdan";
-    $scope.ninjas = [
-      {
-        name: "Mahboub",
-        belt: "green",
-        rate: 50,
-        available: true,
-        thumb: "./content/images/mahboub.png",
+
+    $http.get("data/ninjas.json").then(
+      function ({ data }) {
+        $scope.ninjas = data;
       },
-      {
-        name: "Abdelrahman",
-        belt: "orange",
-        rate: 70,
-        available: true,
-        thumb: "./content/images/abdo.png",
-      },
-      {
-        name: "Dola",
-        belt: "blue",
-        rate: 45,
-        available: true,
-        thumb: "./content/images/adel.png",
-      },
-      {
-        name: "Hemdan",
-        belt: "cornflowerblue",
-        rate: 90,
-        available: true,
-        thumb: "./content/images/hemdan.png",
-      },
-    ];
+      function (error) {
+        console.log(error);
+      }
+    );
   },
 ]);

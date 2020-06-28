@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Mahboub",
+    "belt": "green",
+    "rate": 50,
+    "available": true,
+    "thumb": "./content/images/mahboub.png"
+  },
+  {
+    "name": "Abdelrahman",
+    "belt": "orange",
+    "rate": 70,
+    "available": true,
+    "thumb": "./content/images/abdo.png"
+  },
+  {
+    "name": "Dola",
+    "belt": "blue",
+    "rate": 45,
+    "available": true,
+    "thumb": "./content/images/adel.png"
+  },
+  {
+    "name": "Hemdan",
+    "belt": "cornflowerblue",
+    "rate": 90,
+    "available": true,
+    "thumb": "./content/images/hemdan.png"
+  }
+]
