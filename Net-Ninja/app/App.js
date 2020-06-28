@@ -1,13 +1,30 @@
-let myNinjaApp = angular.module("myNinjaApp", []);
+let myNinjaApp = angular.module("myNinjaApp", ["ngRoute"]);
+
+myNinjaApp.config([
+  "$routeProvider",
+  function ($routeProvider) {
+    $routeProvider
+      .when("/home", {
+        templateUrl: "views/Home.html",
+      })
+      .when("/ninjas", {
+        templateUrl: "views/ListOfNinjas.html",
+        controller: "NinjaController",
+      })
+      .otherwise({
+        redirectTo: "/home",
+      });
+  },
+]);
 
 myNinjaApp.controller("NinjaController", [
   "$scope",
-  ($scope) => {
-    $scope.removeNinja = (ninja) => {
+  function ($scope) {
+    $scope.removeNinja = function (ninja) {
       $scope.ninjas.splice($scope.ninjas.indexOf(ninja), 1);
     };
 
-    $scope.addNewNinja = () => {
+    $scope.addNewNinja = function () {
       $scope.ninjas.push({
         name: $scope.newNinja.name,
         rate: $scope.newNinja.rate,
