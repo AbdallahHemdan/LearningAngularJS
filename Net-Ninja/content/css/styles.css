@@ -137,3 +137,38 @@ main {
 .random-ninja {
   text-align: center;
 }
+
+/* ANIMATIONS */
+
+/* The starting CSS styles for the enter animation */
+main.ng-enter {
+  transition: 1s linear all;
+  opacity: 0;
+}
+
+/* The finishing CSS styles for the enter animation */
+main.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.ninja-list li.ng-enter {
+  transition: 0.2s linear all;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.ninja-list .ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ninja-list li.ng-leave {
+  transition: 0.2s linear all;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ninja-list .ng-leave.ng-leave-active {
+  opacity: 0;
+  transform: translateX(-100%);
+}

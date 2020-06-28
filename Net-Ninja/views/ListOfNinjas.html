@@ -3,7 +3,7 @@
   <button ng-click="order = 'belt'">Order by belt</button>
   <h2>List of ninjas</h2>
   <input type="text" ng-model="search" />
-  <ul>
+  <ul class="ninja-list">
     <li
       ng-repeat="ninja in ninjas | orderBy: order | filter: search  track by $index"
       ng-show="ninja.available"

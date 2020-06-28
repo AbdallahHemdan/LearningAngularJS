@@ -1,4 +1,4 @@
-let myNinjaApp = angular.module("myNinjaApp", ["ngRoute"]);
+let myNinjaApp = angular.module("myNinjaApp", ["ngRoute", "ngAnimate"]);
 
 myNinjaApp.config([
   "$routeProvider",
