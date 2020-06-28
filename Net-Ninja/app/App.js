@@ -6,6 +6,7 @@ myNinjaApp.config([
     $routeProvider
       .when("/home", {
         templateUrl: "views/Home.html",
+        controller: "NinjaController",
       })
       .when("/ninjas", {
         templateUrl: "views/ListOfNinjas.html",
