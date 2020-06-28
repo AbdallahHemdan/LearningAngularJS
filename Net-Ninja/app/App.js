@@ -18,6 +18,22 @@ myNinjaApp.config([
   },
 ]);
 
+myNinjaApp.directive("randomNinja", [
+  function () {
+    return {
+      restrict: "E",
+      scope: {
+        ninjas: "=",
+        title: "=",
+      },
+      templateUrl: "views/RandomNinja.html",
+      controller: function ($scope) {
+        $scope.random = Math.floor(Math.random() * 4);
+      },
+    };
+  },
+]);
+
 myNinjaApp.controller("NinjaController", [
   "$scope",
   "$http",
@@ -35,7 +51,8 @@ myNinjaApp.controller("NinjaController", [
       });
       $scope.newNinja = [];
     };
-    $scope.message = "Hello, my name is Abdallah Hemdan";
+
+    $scope.message = "Hello, from Home";
 
     $http.get("data/ninjas.json").then(
       function ({ data }) {
