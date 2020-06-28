@@ -22,6 +22,8 @@ myNinjaApp.directive("randomNinja", [
   function () {
     return {
       restrict: "E",
+      transclude: true,
+      replace: true,
       scope: {
         ninjas: "=",
         title: "=",
