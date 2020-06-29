@@ -8,6 +8,14 @@
       ng-required="true"
       ng-model="contact.name"
     />
+    <div
+      class=""
+      ng-show="contactForm.name.$touched && contactForm.name.$invalid"
+    >
+      <small style="color: red; font-size: 18px; display: block;"
+        >please enter a valid name</small
+      >
+    </div>
     <input
       type="email"
       name="email"
@@ -16,6 +24,14 @@
       ng-required="true"
       ng-model="contact.email"
     />
+    <div
+      class=""
+      ng-show="contactForm.email.$touched && contactForm.email.$invalid"
+    >
+      <small style="color: red; font-size: 18px; display: block;"
+        >please enter a valid email</small
+      >
+    </div>
     <textarea
       name="message"
       id="message"
@@ -23,7 +39,7 @@
       ng-required="true"
       ng-model="contact.message"
     ></textarea>
-    <input type="submit" value="send" />
+    <input type="submit" value="send" ng-disabled="contactForm.$invalid" />
   </form>
   <h3>Your name : {{contact.name}}</h3>
   <h3>Your email : {{contact.email}}</h3>
