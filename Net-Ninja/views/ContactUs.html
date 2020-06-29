@@ -1,0 +1,31 @@
+<div class="content">
+  <form name="contactForm" novalidate>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="enter your name"
+      ng-required="true"
+      ng-model="contact.name"
+    />
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="enter your email"
+      ng-required="true"
+      ng-model="contact.email"
+    />
+    <textarea
+      name="message"
+      id="message"
+      placeholder="leave your message down below"
+      ng-required="true"
+      ng-model="contact.message"
+    ></textarea>
+    <input type="submit" value="send" />
+  </form>
+  <h3>Your name : {{contact.name}}</h3>
+  <h3>Your email : {{contact.email}}</h3>
+  <h3>Your message : {{contact.message}}</h3>
+</div>

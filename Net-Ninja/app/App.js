@@ -12,6 +12,9 @@ myNinjaApp.config([
         templateUrl: "views/ListOfNinjas.html",
         controller: "NinjaController",
       })
+      .when("/contact", {
+        templateUrl: "views/ContactUs.html",
+      })
       .otherwise({
         redirectTo: "/home",
       });
