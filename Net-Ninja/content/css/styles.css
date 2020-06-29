@@ -172,3 +172,8 @@ main.ng-enter.ng-enter-active {
   opacity: 0;
   transform: translateX(-100%);
 }
+
+.ninja-list li.ng-leave-stagger {
+  transition-delay: 0.2s;
+  transition-duration: 0;
+}

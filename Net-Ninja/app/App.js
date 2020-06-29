@@ -54,6 +54,9 @@ myNinjaApp.controller("NinjaController", [
       $scope.newNinja = [];
     };
 
+    $scope.killAllNinjas = function () {
+      $scope.ninjas = [];
+    };
     $scope.message = "Hello, from Home";
 
     $http.get("data/ninjas.json").then(
